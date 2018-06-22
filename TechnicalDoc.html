@@ -10,11 +10,11 @@
 	<nav id="navbar">
 		<header>Snellie Documentation</header>
 		<ul>
-			<a href="#Introduction">Introduction</a>
-			<a href="#Hardware">Hardware</a>
-			<a href="#Software">Software</a>
-			<a href="#Future Releases">Future Releases</a>
-			<a href="#References">References</a>
+			<a class="nav-link" href="#Introduction">Introduction</a>
+			<a class="nav-link" href="#Hardware">Hardware</a>
+			<a class="nav-link" href="#Robot_API">Robot API</a>
+			<a class="nav-link" href="#Future_Releases">Future Releases</a>
+			<a class="nav-link" href="#References">References</a>
 		</ul>
 	</nav>
 	<main id="main-doc">
@@ -34,45 +34,96 @@
 			<header>Hardware</header>
 			<article>
 				<h2>Parts:</h2>
+				<li>AtMEGA2560</li>
 				<h3>L298N</h3>
-				<h3>Motors</h3>
-				<h3>Slot Photo-Detectors</h3>
-				<h3>Ultrasonic Range-Sensor</h3>
-				<ul>
-					<li>Left wheel input - Port J bit 0, PCINT9</li>
-					<li>Right wheel input - Port J bit 1, PCINT10</li>
-				</ul>
-				<h3>IR Proximity Sensor</h3>
-				<ul>
-					<li>Left Sensor - Port F bit 1</li>
-					<li>Right Sensor - Port F bit 0-</li>
-				</ul>
-			</article>
-		</section>
+				<li>Motor VCC (Pin4)
+					<li>GND (Pin5)</li>
+					<li>+5V in(Pin6)</li>
+					<li>ENA(Pin7)</li>
+					<li>ENB(Pin12)</li>
+					<li>IN1(Pin8)</li>
+					<li>IN2(Pin9)</li>
+					<li>IN3(PIN10)</li>
+					<li>IN4(PIN11)</li>
+					<h3>Motors</h3>
+					<li>Right motor</li>
+					<li>Left motor</li>
+					<h3>Slot Photo-Detectors</h3>
+					<ul>
+						<li>Left wheel input - Port J bit 0, PCINT9</li>
+						<li>Right wheel input - Port J bit 1, PCINT10</li>
+					</ul>
+					<h3>Ultrasonic Range-Sensor</h3>
+					<li>Trigger</li>
+					<li>Echo</li>
+					<h3>IR Proximity Sensor</h3>
+					<ul>
+						<li>Left Sensor - Port F bit 1</li>
+						<li>Right Sensor - Port F bit 0-</li>
+					</ul>
+				</article>
+			</section>
 
-		<section class="main-section" id="Software">
-			<header>Software</header>
-			<article>
-				<p>Cinco</p>
-				<p>Seis</p>
-			</article>
-		</section>
+			<section class="main-section" id="Robot_API">
+				<header>Robot API</header>
+				<article>
+					<h2>Threads</h2>
+					<ul>
+						<li><h3>go_forward_thread</h3></li>
+						<ul>
+							<li>get_steps</li>
+							<li>reset_steps</li>
+							<li>setRightSpeed</li>
+							<li>setRightSpeed</li>
+							<li>setDirection</li>
+						</ul>
+						<li><h3>trackListener_thread</h3></li>
+						<ul>
+							<li>adjustForTrack</li>
+							<li>offTrack</li>
+						</ul>
+						<li><h3>obstacle_thread</h3></li>
+						<ul>
+							<li>read_avg_sensor</li>
+							<li>getLeftSpeed</li>
+							<li>getRightSpeed</li>
+							<li>rightDirectionForward</li>
+							<li>leftDirectionBackward</li>
+							<li>setSpeed</li>
+							<li>stop</li>
+							<li>reset_steps</li>
+							<li>setLeftSpeed</li>
+							<li>setRightSpeed<li>
+							</ul>
+						</ul>
+						<h2>Initialization Functions</h2>
+						<ul>
+							<li><h3>setUp</h3></li>
+							<ul>
+								<li>Init_tracker</li>
+								<li>Init_motors</li>
+								<li>Init_sensor</li>
+								<li>init_photoInterruptors</li>
+							</ul>
+						</ul>
+					</article>
+				</section>
 
-		<section class="main-section" id="Future Releases">
-			<header>Future Releases</header>
-			<article>
-				<p>Seite</p>
-				<p>Ocho</p>
-			</article>
-		</section>
+				<section class="main-section" id="Future_Releases">
+					<header>Future Releases</header>
+					<article>
+						<p>Seite</p>
+						<p>Ocho</p>
+					</article>
+				</section>
 
-		<section class="main-section" id="Reference">
-			<header>Reference</header>
-			<article>
-				<p>Nueve</p>
-				<p>Diez</p>
-			</article>
-		</section>
-	</main>
-</body>
-</html>
+				<section class="main-section" id="References">
+					<header>References</header>
+					<article>
+						<p>Nueve</p>
+						<p>Diez</p>
+					</article>
+				</section>
+			</main>
+		</body>
+		</html>
