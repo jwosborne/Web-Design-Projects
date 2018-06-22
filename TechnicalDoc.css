@@ -1,0 +1,31 @@
+body {
+	min-width: 300px;
+	line-height: 1.5;
+}
+#navbar {
+	position: fixed;
+	top:0px;
+	left:0px;
+	width:260px;
+	height:100%;
+	border-right:solid;
+
+}
+header {
+	font-size:30px;
+	text-align:center;
+}
+#navbar ul{
+
+}
+#navbar li {
+	border:1px solid;
+}
+#navbar a{
+
+}
+#main-doc {
+	position: absolute;
+	margin-left: 320px;
+	padding: 15px;
+}
