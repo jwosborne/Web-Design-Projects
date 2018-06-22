@@ -13,8 +13,8 @@
 			<a class="nav-link" href="#Introduction">Introduction</a>
 			<a class="nav-link" href="#Hardware">Hardware</a>
 			<a class="nav-link" href="#Robot_API">Robot API</a>
-			<a class="nav-link" href="#Future_Releases">Future Releases</a>
-			<a class="nav-link" href="#References">References</a>
+			<a class="nav-link" href="#Sample_Code">Sample Code</a>
+			<a class="nav-link" href="#Reference">Reference</a>
 		</ul>
 	</nav>
 	<main id="main-doc">
@@ -67,6 +67,7 @@
 			<section class="main-section" id="Robot_API">
 				<header>Robot API</header>
 				<article>
+					<p>Snellie was built from the ground-up. Care was taken to create library functions that could be reused in other projects</p> 
 					<h2>Threads</h2>
 					<ul>
 						<li><h3>go_forward_thread</h3></li>
@@ -109,21 +110,79 @@
 					</article>
 				</section>
 
-				<section class="main-section" id="Future_Releases">
-					<header>Future Releases</header>
+				<section class="main-section" id="Sample_Code">
+					<header>Sample Code</header>
 					<article>
-						<p>Seite</p>
-						<p>Ocho</p>
-					</article>
-				</section>
+						<p>This section includes code that was used to pass various tests. It is included here to give examples as to how to program the robot to complete various tasks.</p>
+						<p>straight-line travel 8 seconds</p>
+						<code>
+							void test_one() {
+								unsigned long start_time;
 
-				<section class="main-section" id="References">
-					<header>References</header>
-					<article>
-						<p>Nueve</p>
-						<p>Diez</p>
-					</article>
-				</section>
-			</main>
-		</body>
-		</html>
+								x_delay(1000);
+								start_time = x_gtime();
+								x_new(1, go_forward_thread, true);
+
+								while (x_gtime() - start_time < 8000) {
+									x_delay(1);
+								}
+
+								stop();
+								x_disable(1);
+							}
+						</code>
+				<p>straight-line travel 8 feet</p>
+				<code>
+					void test_two() {
+						unsigned int cm = 2438;	// 243.8cm = 8ft
+
+						x_delay(1000);
+						go_straight(cm, MED_SPEED, FRWD);
+					}
+				</code>
+			<p>straight-line travel 8 feet in 30 seconds</p>
+			<code>
+				void test_three() {
+					unsigned int cm = 2438;	// 243.8cm = 8ft
+					uint8_t speed = 0xA0;	// 8.1 cm/s ????
+
+					go_straight(cm, speed, FRWD);
+				}
+				</code>
+				<p>rotate in place</p>
+				<code>
+					void test_four() {
+						pivot(90);
+						_delay_ms(4000);
+						pivot(300);
+						_delay_ms(4000);
+						pivot(-100);
+						_delay_ms(4000);
+						pivot(-100);
+					}
+				</code>
+				<p>blink onboard LED</p>
+				<code>
+					void blinky() {
+						DDRB |= 0x80;
+						while(1) {
+							PORTB |= 0x80;
+							x_delay(100);
+							PORTB &= 0x7F;
+							x_delay(100);
+						}
+					}
+				</code>
+			</article>
+		</section>
+
+		<section class="main-section" id="Reference">
+			<header>Reference</header>
+			<article>
+				<p>Documentation for the ATMega2560 can be found at 
+					<a href="http://ww1.microchip.com/downloads/en/DeviceDoc/Atmel-2549-8-bit-AVR-Microcontroller-ATmega640-1280-1281-2560-2561_datasheet.pdf" target="_blank">ww1.microchip.com</a></p>
+			</article>
+		</section>
+	</main>
+</body>
+</html>
