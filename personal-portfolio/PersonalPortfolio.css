@@ -1,3 +1,6 @@
+body {
+	text-align: center;
+}
 #navbar {
 	position: fixed;
 	top:0px;
@@ -12,7 +15,13 @@ nav ul li a:hover {
 	position: absolute;
 	margin-left: 320px;
 }
+#welcome-section {
+	top: 0;
+	min-height: 55vh;
+	padding-top: 45vh;
+}
 @media (max-width: 367px) {
 	#contact {
 		min-height:1100px;
 	}
+}
