@@ -1,0 +1,18 @@
+#navbar {
+	position: fixed;
+	top:0px;
+	left:0px;
+	width:260px;
+	border-right: solid;
+}
+nav ul li a:hover {
+	color:green;
+}
+#main-doc {
+	position: absolute;
+	margin-left: 320px;
+}
+@media (max-width: 367px) {
+	#contact {
+		min-height:1100px;
+	}
