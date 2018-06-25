@@ -10,6 +10,7 @@ html {
 	background-color: #ccc;
 }
 
+
 /* Card container styles */
 .card {
 	width: 35em;
@@ -20,10 +21,24 @@ html {
 	border-radius: 1.5em;
 }
 
+.card h2, .card p {
+	margin: 0;
+}
+
 /* Header and footer styles */
+.card header, .card footer {
+	height: 3em;
+	padding: 1em;
+}
+
 .card header {
 	background-image: linear-gradient(to bottom,rgba(0,0,0,0.1), rgba(0,0,0,0));
 	border-radius: 1.5em 1.5em 0 0;
+}
+
+.card header h2 {
+	font-size: 2em;
+	line-height: 1.5;
 }
 
 .card footer {
@@ -31,7 +46,22 @@ html {
 	border-radius: 0 0 1.5em 1.5em;
 }
 
+.card footer p {
+	font-size: 1.5em;
+	line-height: 2;
+}
+
 /* Main buisness card contents styles */
+.card article {
+	height: 12em;
+	background-color: rgba(0,0,0,0.4);
+}
+
+.card article p {
+	padding: 1em;
+	color: white;
+}
+
 .card article img {
 	max-height: 100%;
 	float: right;
