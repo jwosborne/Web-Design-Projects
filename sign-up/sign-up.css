@@ -1,0 +1,27 @@
+html {
+	background-color:LightBlue;
+}
+form {
+	/** width: 400px; */
+	padding: 0 0 24px;
+	margin: 0 auto;
+	background: #EDF0F3;
+	display: flex;
+	flex-flow: row wrap;
+	justify-content: left;
+}
+h1 {
+	flex: 100%;
+}
+h2 {
+	flex: 100%;
+}
+section {
+	flex: ;
+}
+label {
+	font-size: 14px;
+	line-height: 20px;
+	font-weight: 400;
+	color: rgba(0,0,0,1);
+}
